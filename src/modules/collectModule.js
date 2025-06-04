@@ -1,4 +1,4 @@
-import { DateTitle } from './dateTitlModule'
+import { DateTitle } from './dateTitleModule'
 
 export const CollectType = {
     name: 'NAME',

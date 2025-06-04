@@ -110,9 +110,7 @@ watch(finishedDate, () => calculator(originalDate.value, finishedDate.value))
 
 const calculator = function (originalDate, finishedDate) {
     if (originalDate && finishedDate) {
-        const original = moment(originalDate, 'YYYY-MM-DD')
-        const finished = moment(finishedDate, 'YYYY-MM-DD')
-        diffDays.value = finished.diff(original, 'days')
+        diffDays.value = moment(finishedDate, 'YYYY-MM-DD').diff(moment(originalDate, 'YYYY-MM-DD'), 'days')
 
         alert(`相差：${diffDays.value}天`)
     }

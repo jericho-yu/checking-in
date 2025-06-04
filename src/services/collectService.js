@@ -33,7 +33,7 @@ export class CollectService {
             const name = Str.new(row[1]).replace()
             tmp.push(Collect.new(row[0], CollectType.rowNumber))
             tmp.push(Collect.new(name, CollectType.name))
-            this._dateTitles.data.forEach((dateTitle) => tmp.push(Collect.new(row[dateTitle.idx], CollectType.collect, dateTitle, name === '时永浩')))
+            this._dateTitles.data.forEach((dateTitle) => tmp.push(Collect.new(row[dateTitle.idx], CollectType.collect, dateTitle)))
             this._collectData.push(tmp)
         })
 

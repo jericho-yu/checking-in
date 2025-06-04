@@ -1,4 +1,4 @@
-import { DateTitle } from './dateTitlModule'
+import { DateTitle } from './dateTitleModule'
 import { ClockIn } from './clockInModule'
 import { Collect } from './collectModule'
 

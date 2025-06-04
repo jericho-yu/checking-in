@@ -33,7 +33,7 @@ export class ClockInService {
                 const name = Str.new(row[1]).replace()
                 tmp.push(ClockIn.new(row[0], ClockInType.rowNumber))
                 tmp.push(ClockIn.new(name, ClockInType.name))
-                this._dateTitles.data.forEach((item) => tmp.push(ClockIn.new(row[item.idx], ClockInType.clockIn, this._dateTitles)))
+                this._dateTitles.data.forEach((item) => tmp.push(ClockIn.new(row[item.idx], ClockInType.clockIn, this._dateTitles, name === '巩伦昊')))
                 this._clockInData.push(tmp)
             })
 

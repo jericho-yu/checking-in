@@ -291,7 +291,7 @@ const generateExcel = async function (finalStatisticStore = {}, filename = '') {
     // 设置表头
     worksheet.columns = [
         { header: '姓名', key: 'name', width: 10, font: { color: { argb: '000000' } } },
-        { header: '工作日\r\n加班', key: 'workdayOvertime', width: 10, font: { color: { argb: '00FF00' } }, },
+        { header: '周末\r\n加班', key: 'weekendOvertime', width: 10, font: { color: { argb: '00FF00' } }, },
         { header: '假日\r\n加班', key: 'holidayOvertime', width: 10, font: { color: { argb: '00FF00' } }, },
         { header: '三薪日\r\n加班', key: 'holiday3Overtime', width: 10, font: { color: { argb: '00FF00' } }, },
         { header: '年假', key: 'annualLeave', width: 10, font: { color: { argb: '0000FF' } } },
@@ -320,7 +320,7 @@ const generateExcel = async function (finalStatisticStore = {}, filename = '') {
         worksheet
             .addRow({
                 name: name,
-                workdayOvertime: row.workdayOvertime || '',
+                weekendOvertime: row.weekendOvertime || '',
                 holidayOvertime: row.holidayOvertime || '',
                 holiday3Overtime: row.holiday3Overtime || '',
                 annualLeave: row.annualLeave || '',
