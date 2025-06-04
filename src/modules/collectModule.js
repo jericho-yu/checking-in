@@ -138,7 +138,7 @@ export class Collect {
             }
             if (matches.includes('病假')) {
                 this._status = true
-                this._collectStatistic._sickLeave = true
+                this._collectStatistic.sickLeave = true
             }
             if (matches.includes('旷工')) {
                 this._status = true

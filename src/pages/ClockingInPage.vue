@@ -25,8 +25,8 @@
                                     <q-btn icon="event" round color="primary">
                                         <q-popup-proxy @before-show="holiday3Dates_updateProxy" cover
                                             transition-show="scale" transition-hide="scale">
-                                            <q-date v-model="holiday3DatesProxy" multiple flat bordered
-                                                mark="YYYY-MM-DD">
+                                            <q-date v-model="holiday3DatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
                                                 <div class="row items-center justify-end q-gutter-sm">
                                                     <q-btn label="Cancel" color="primary" flat v-close-popup />
                                                     <q-btn label="OK" color="primary" flat @click="holiday3Dates_save"
@@ -64,8 +64,8 @@
                                     <q-btn icon="event" round color="primary">
                                         <q-popup-proxy @before-show="exWorkday_updateProxy" cover
                                             transition-show="scale" transition-hide="scale">
-                                            <q-date v-model="exWorkdayDatesProxy" multiple flat bordered
-                                                mark="YYYY-MM-DD">
+                                            <q-date v-model="exWorkdayDatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
                                                 <div class="row items-center justify-end q-gutter-sm">
                                                     <q-btn label="Cancel" color="primary" flat v-close-popup />
                                                     <q-btn label="OK" color="primary" flat @click="exWorkday_save"
@@ -103,8 +103,8 @@
                                     <q-btn icon="event" round color="primary">
                                         <q-popup-proxy @before-show="exHolidayDates_updateProxy" cover
                                             transition-show="scale" transition-hide="scale">
-                                            <q-date v-model="exHolidayDatesProxy" multiple flat bordered
-                                                mark="YYYY-MM-DD">
+                                            <q-date v-model="exHolidayDatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
                                                 <div class="row items-center justify-end q-gutter-sm">
                                                     <q-btn label="Cancel" color="primary" flat v-close-popup />
                                                     <q-btn label="OK" color="primary" flat @click="exHolidayDates_save"
@@ -142,8 +142,8 @@
                                     <q-btn icon="event" round color="primary">
                                         <q-popup-proxy @before-show="holidayDates_updateProxy" cover
                                             transition-show="scale" transition-hide="scale">
-                                            <q-date v-model="holidayDatesProxy" multiple flat bordered
-                                                mark="YYYY-MM-DD">
+                                            <q-date v-model="holidayDatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
                                                 <div class="row items-center justify-end q-gutter-sm">
                                                     <q-btn label="Cancel" color="primary" flat v-close-popup />
                                                     <q-btn label="OK" color="primary" flat @click="holidayDates_save"
