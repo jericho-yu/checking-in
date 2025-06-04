@@ -92,7 +92,7 @@ export class StatisticService {
                         collectDatumItem.statistic.overtime
                     ) {
                         if (clockInDatumItem.status) {
-                            this._finalStatistic[name].holiday++
+                            this._finalStatistic[name].holidayOvertime++
                             this._finalStatistic[name].log.push(`【${dateTitle.value}】国假加班 → ${collectDatumItem.value}`,)
                         } else {
                             this._finalStatistic[name].overtimeClockOut++
@@ -119,7 +119,7 @@ export class StatisticService {
                         collectDatumItem.statistic.overtime
                     ) {
                         if (clockInDatumItem.status) {
-                            this._finalStatistic[name].holiday3++
+                            this._finalStatistic[name].holiday3Overtime++
                             this._finalStatistic[name].log.push(`【${dateTitle.value}】三薪加班 → ${collectDatumItem.value}`,)
                         } else {
                             this._finalStatistic[name].overtimeClockOut++
