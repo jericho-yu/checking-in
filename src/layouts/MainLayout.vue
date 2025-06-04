@@ -8,22 +8,35 @@
                     <q-avatar>
                         <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
                     </q-avatar>
-                    Title
+                    人事防呆工具
                 </q-toolbar-title>
 
-                <q-btn dense flat round icon="menu" @click="rightDrawerOpen = !rightDrawerOpen" />
+                <!-- <q-btn dense flat round icon="menu" @click="rightDrawerOpen = !rightDrawerOpen" /> -->
             </q-toolbar>
 
             <q-tabs align="center"> </q-tabs>
         </q-header>
 
         <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
+            <q-list style="min-width: 100px">
+                <q-item clickable>
+                    <q-item-section>
+                        <router-link to="/">考勤预处理</router-link>
+                    </q-item-section>
+                </q-item>
+                <q-item clickable>
+                    <q-item-section>
+                        <router-link to="/timeCalculator">时间计算器</router-link>
+                    </q-item-section>
+                </q-item>
+                <q-separator />
+            </q-list>
             <!-- drawer content -->
         </q-drawer>
 
-        <q-drawer v-model="rightDrawerOpen" side="right" overlay bordered>
-            <!-- drawer content -->
-        </q-drawer>
+        <!-- <q-drawer v-model="rightDrawerOpen" side="right" overlay bordered> -->
+        <!-- drawer content -->
+        <!-- </q-drawer> -->
 
         <q-page-container>
             <router-view />
@@ -35,7 +48,7 @@
                     <q-avatar>
                         <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
                     </q-avatar>
-                    <div>Title</div>
+                    <div></div>
                 </q-toolbar-title>
             </q-toolbar>
         </q-footer>
@@ -46,5 +59,5 @@
 import { ref } from 'vue'
 
 const leftDrawerOpen = ref(false)
-const rightDrawerOpen = ref(false)
+// const rightDrawerOpen = ref(false)
 </script>

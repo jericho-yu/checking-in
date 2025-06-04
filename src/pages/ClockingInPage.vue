@@ -312,14 +312,8 @@ const generateExcel = async function (finalStatisticStore = {}, filename = '') {
     const headerRow = worksheet.getRow(1) // 获取第一行（表头）
     headerRow.font = { name: '仿宋', bold: true, size: 14 }
     headerRow.border = defaultBorder
-    headerRow.height = 37.5
-    headerRow.eachCell((cell) => {
-        cell.alignment = {
-            wrapText: true,
-            vertical: 'middle',
-            horizontal: 'center',
-        }
-    })
+    headerRow.height = 42
+    headerRow.eachCell((cell) => cell.alignment = { wrapText: true, vertical: 'middle', horizontal: 'center', })
 
     // 添加数据
     Object.entries(finalStatisticStore).forEach(([name, row]) => {
@@ -349,22 +343,17 @@ const generateExcel = async function (finalStatisticStore = {}, filename = '') {
                 let style = {
                     font: { name: '仿宋', size: 12, bold: false, color: { argb: ['000000'] } },
                     border: defaultBorder,
-                    alignment: {
-                        wrapText: true,
-                        vertical: 'middle',
-                        horizontal: idx !== 16 ? 'center' : 'left',
-                    },
+                    alignment: { wrapText: true, vertical: 'middle', horizontal: idx !== 16 ? 'center' : 'left', },
                 }
 
                 for (const item of [
                     { target: [2, 3, 4], color: '3D9C6A' }, // 绿色
                     { target: [5, 6, 7, 8, 9], color: '0000FF' }, // 蓝色
                     { target: [10, 11, 12, 13, 14, 15], color: 'FF0000' }, // 红色
-                ]) {
-                    if (item.target.includes(idx)) { style.font.color.argb = [item.color]; break }
-                }
+                ]) if (item.target.includes(idx)) { style.font.color.argb = [item.color]; break }
 
-                if ([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].includes(idx)) { style.font.bold = true }
+
+                if ([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].includes(idx)) style.font.bold = true
 
                 cell.font = style.font
                 cell.border = style.border
@@ -383,14 +372,8 @@ const generateExcel = async function (finalStatisticStore = {}, filename = '') {
     })
 
     worksheet.eachRow((row, rowNumber) => {
-        if (rowNumber % 2 === 0) {
-            // 偶数行
-            row.fill = {
-                type: 'pattern',
-                pattern: 'solid',
-                fgColor: { argb: 'D2D2D2' }, // 浅灰色
-            }
-        }
+        // 偶数行
+        if (rowNumber % 2 === 0) row.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'D2D2D2' }, }
     })
 
     // 生成 Blob 并下载
