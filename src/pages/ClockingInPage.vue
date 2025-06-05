@@ -2,11 +2,7 @@
     <div class="q-pa-md q-gutter-md">
         <div class="row q-gutter-md">
             <div class="col">
-                输入起始月份（格式：年年年年-月月-日日）<q-input
-                    outlined
-                    label="输入起始月份："
-                    v-model="startDay"
-                />
+                输入起始月份（格式：年年年年-月月-日日）<q-input outlined label="输入起始月份：" v-model="startDay" />
             </div>
         </div>
 
@@ -17,55 +13,24 @@
                         <q-list>
                             <q-item clickable>
                                 <q-item-section>
-                                    <span style="font-size: 20px" class="text-primary"
-                                        >1. 三薪日</span
-                                    >
+                                    <span style="font-size: 20px" class="text-primary">1. 三薪日</span>
                                     <span class="text-secondary">&nbsp;</span>
                                 </q-item-section>
 
                                 <q-item-section avatar>
-                                    <q-btn
-                                        @click="clearHoliday3Dates"
-                                        round
-                                        color="red"
-                                        icon="fa fa-times"
-                                    ></q-btn>
+                                    <q-btn @click="clearHoliday3Dates" round color="red" icon="fa fa-times"></q-btn>
                                 </q-item-section>
 
                                 <q-item-section avatar>
                                     <q-btn icon="event" round color="primary">
-                                        <q-popup-proxy
-                                            @before-show="holiday3Dates_updateProxy"
-                                            cover
-                                            transition-show="scale"
-                                            transition-hide="scale"
-                                        >
-                                            <q-date
-                                                v-model="holiday3DatesProxy"
-                                                multiple
-                                                flat
-                                                bordered
-                                                today-btn
-                                                landscape
-                                                years-in-month-view
-                                                mark="YYYY-MM-DD"
-                                            >
-                                                <div
-                                                    class="row items-center justify-end q-gutter-sm"
-                                                >
-                                                    <q-btn
-                                                        label="Cancel"
-                                                        color="primary"
-                                                        flat
-                                                        v-close-popup
-                                                    />
-                                                    <q-btn
-                                                        label="OK"
-                                                        color="primary"
-                                                        flat
-                                                        @click="holiday3Dates_save"
-                                                        v-close-popup
-                                                    />
+                                        <q-popup-proxy @before-show="holiday3Dates_updateProxy" cover
+                                            transition-show="scale" transition-hide="scale">
+                                            <q-date v-model="holiday3DatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
+                                                <div class="row items-center justify-end q-gutter-sm">
+                                                    <q-btn label="Cancel" color="primary" flat v-close-popup />
+                                                    <q-btn label="OK" color="primary" flat @click="holiday3Dates_save"
+                                                        v-close-popup />
                                                 </div>
                                             </q-date>
                                         </q-popup-proxy>
@@ -77,9 +42,7 @@
 
                     <q-separator inset />
 
-                    <q-card-section
-                        ><date-list :dateList="holiday3Dates"></date-list
-                    ></q-card-section>
+                    <q-card-section><date-list :dateList="holiday3Dates"></date-list></q-card-section>
                 </q-card>
             </div>
 
@@ -89,55 +52,24 @@
                         <q-list>
                             <q-item clickable>
                                 <q-item-section>
-                                    <span style="font-size: 20px" class="text-primary"
-                                        >2. 调休</span
-                                    >
+                                    <span style="font-size: 20px" class="text-primary">2. 调休</span>
                                     <span class="text-secondary">调休按照工作日计算</span>
                                 </q-item-section>
 
                                 <q-item-section avatar>
-                                    <q-btn
-                                        @click="clearExWorkdayDates"
-                                        round
-                                        color="red"
-                                        icon="fa fa-times"
-                                    ></q-btn>
+                                    <q-btn @click="clearExWorkdayDates" round color="red" icon="fa fa-times"></q-btn>
                                 </q-item-section>
 
                                 <q-item-section avatar>
                                     <q-btn icon="event" round color="primary">
-                                        <q-popup-proxy
-                                            @before-show="exWorkday_updateProxy"
-                                            cover
-                                            transition-show="scale"
-                                            transition-hide="scale"
-                                        >
-                                            <q-date
-                                                v-model="exWorkdayDatesProxy"
-                                                multiple
-                                                flat
-                                                bordered
-                                                today-btn
-                                                landscape
-                                                years-in-month-view
-                                                mark="YYYY-MM-DD"
-                                            >
-                                                <div
-                                                    class="row items-center justify-end q-gutter-sm"
-                                                >
-                                                    <q-btn
-                                                        label="Cancel"
-                                                        color="primary"
-                                                        flat
-                                                        v-close-popup
-                                                    />
-                                                    <q-btn
-                                                        label="OK"
-                                                        color="primary"
-                                                        flat
-                                                        @click="exWorkday_save"
-                                                        v-close-popup
-                                                    />
+                                        <q-popup-proxy @before-show="exWorkday_updateProxy" cover
+                                            transition-show="scale" transition-hide="scale">
+                                            <q-date v-model="exWorkdayDatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
+                                                <div class="row items-center justify-end q-gutter-sm">
+                                                    <q-btn label="Cancel" color="primary" flat v-close-popup />
+                                                    <q-btn label="OK" color="primary" flat @click="exWorkday_save"
+                                                        v-close-popup />
                                                 </div>
                                             </q-date>
                                         </q-popup-proxy>
@@ -149,9 +81,7 @@
 
                     <q-separator inset />
 
-                    <q-card-section
-                        ><date-list :dateList="exWorkdayDates"></date-list
-                    ></q-card-section>
+                    <q-card-section><date-list :dateList="exWorkdayDates"></date-list></q-card-section>
                 </q-card>
             </div>
 
@@ -161,57 +91,24 @@
                         <q-list>
                             <q-item clickable>
                                 <q-item-section>
-                                    <span style="font-size: 20px" class="text-primary"
-                                        >3. 年假调休</span
-                                    >
-                                    <span class="text-secondary"
-                                        >例如：春节公司使用年假全司休息</span
-                                    >
+                                    <span style="font-size: 20px" class="text-primary">3. 年假调休</span>
+                                    <span class="text-secondary">例如：春节公司使用年假全司休息</span>
                                 </q-item-section>
 
                                 <q-item-section avatar>
-                                    <q-btn
-                                        @click="clearExHolidayDates"
-                                        round
-                                        color="red"
-                                        icon="fa fa-times"
-                                    ></q-btn>
+                                    <q-btn @click="clearExHolidayDates" round color="red" icon="fa fa-times"></q-btn>
                                 </q-item-section>
 
                                 <q-item-section avatar>
                                     <q-btn icon="event" round color="primary">
-                                        <q-popup-proxy
-                                            @before-show="exHolidayDates_updateProxy"
-                                            cover
-                                            transition-show="scale"
-                                            transition-hide="scale"
-                                        >
-                                            <q-date
-                                                v-model="exHolidayDatesProxy"
-                                                multiple
-                                                flat
-                                                bordered
-                                                today-btn
-                                                landscape
-                                                years-in-month-view
-                                                mark="YYYY-MM-DD"
-                                            >
-                                                <div
-                                                    class="row items-center justify-end q-gutter-sm"
-                                                >
-                                                    <q-btn
-                                                        label="Cancel"
-                                                        color="primary"
-                                                        flat
-                                                        v-close-popup
-                                                    />
-                                                    <q-btn
-                                                        label="OK"
-                                                        color="primary"
-                                                        flat
-                                                        @click="exHolidayDates_save"
-                                                        v-close-popup
-                                                    />
+                                        <q-popup-proxy @before-show="exHolidayDates_updateProxy" cover
+                                            transition-show="scale" transition-hide="scale">
+                                            <q-date v-model="exHolidayDatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
+                                                <div class="row items-center justify-end q-gutter-sm">
+                                                    <q-btn label="Cancel" color="primary" flat v-close-popup />
+                                                    <q-btn label="OK" color="primary" flat @click="exHolidayDates_save"
+                                                        v-close-popup />
                                                 </div>
                                             </q-date>
                                         </q-popup-proxy>
@@ -223,9 +120,7 @@
 
                     <q-separator inset />
 
-                    <q-card-section
-                        ><date-list :dateList="exHolidayDates"></date-list
-                    ></q-card-section>
+                    <q-card-section><date-list :dateList="exHolidayDates"></date-list></q-card-section>
                 </q-card>
             </div>
 
@@ -235,55 +130,24 @@
                         <q-list>
                             <q-item clickable>
                                 <q-item-section>
-                                    <span style="font-size: 20px" class="text-primary"
-                                        >4. 国假</span
-                                    >
+                                    <span style="font-size: 20px" class="text-primary">4. 国假</span>
                                     <span class="text-secondary">例如春节除三薪日外的假期</span>
                                 </q-item-section>
 
                                 <q-item-section avatar>
-                                    <q-btn
-                                        @click="clearHolidayDates"
-                                        round
-                                        color="red"
-                                        icon="fa fa-times"
-                                    ></q-btn>
+                                    <q-btn @click="clearHolidayDates" round color="red" icon="fa fa-times"></q-btn>
                                 </q-item-section>
 
                                 <q-item-section avatar>
                                     <q-btn icon="event" round color="primary">
-                                        <q-popup-proxy
-                                            @before-show="holidayDates_updateProxy"
-                                            cover
-                                            transition-show="scale"
-                                            transition-hide="scale"
-                                        >
-                                            <q-date
-                                                v-model="holidayDatesProxy"
-                                                multiple
-                                                flat
-                                                bordered
-                                                today-btn
-                                                landscape
-                                                years-in-month-view
-                                                mark="YYYY-MM-DD"
-                                            >
-                                                <div
-                                                    class="row items-center justify-end q-gutter-sm"
-                                                >
-                                                    <q-btn
-                                                        label="Cancel"
-                                                        color="primary"
-                                                        flat
-                                                        v-close-popup
-                                                    />
-                                                    <q-btn
-                                                        label="OK"
-                                                        color="primary"
-                                                        flat
-                                                        @click="holidayDates_save"
-                                                        v-close-popup
-                                                    />
+                                        <q-popup-proxy @before-show="holidayDates_updateProxy" cover
+                                            transition-show="scale" transition-hide="scale">
+                                            <q-date v-model="holidayDatesProxy" multiple flat bordered today-btn
+                                                landscape years-in-month-view mark="YYYY-MM-DD">
+                                                <div class="row items-center justify-end q-gutter-sm">
+                                                    <q-btn label="Cancel" color="primary" flat v-close-popup />
+                                                    <q-btn label="OK" color="primary" flat @click="holidayDates_save"
+                                                        v-close-popup />
                                                 </div>
                                             </q-date>
                                         </q-popup-proxy>
@@ -295,9 +159,7 @@
 
                     <q-separator inset />
 
-                    <q-card-section
-                        ><date-list :dateList="holidayDates"></date-list
-                    ></q-card-section>
+                    <q-card-section><date-list :dateList="holidayDates"></date-list></q-card-section>
                 </q-card>
             </div>
         </div>
@@ -305,15 +167,8 @@
         <div class="row">
             <div class="col">
                 <q-card-section>
-                    <q-uploader
-                        url="#"
-                        color="purple"
-                        label="5. 选择考勤表"
-                        flat
-                        bordered
-                        style="width: 100%"
-                        @added="onUploaded"
-                    />
+                    <q-uploader url="#" color="purple" label="5. 选择考勤表" flat bordered style="width: 100%"
+                        @added="onUploaded" />
                 </q-card-section>
             </div>
         </div>
@@ -395,9 +250,7 @@ const onUploaded = async function (files) {
             // 解析数据 -> 打卡
             ClockInService.new(originalClockIn.slice(1), dateTitle)
                 .parse()
-                .data.forEach((item) => {
-                    clockInData[item[1].value] = item
-                })
+                .data.forEach((item) => (clockInData[item[1].value] = item))
 
             // 解析数据 -> 汇总
             CollectService.new(originalCollect.slice(1), dateTitle)
