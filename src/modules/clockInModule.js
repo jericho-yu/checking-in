@@ -30,25 +30,54 @@ export class ClockIn {
         this._setValue(content || '')
     }
 
-    static new = (content = null, contentType = null, dateTitle = null, print = false) => new ClockIn(content, contentType, dateTitle, print)
+    static new = (content = null, contentType = null, dateTitle = null, print = false) =>
+        new ClockIn(content, contentType, dateTitle, print)
 
     static make = () => new ClockIn()
 
-    get type() { return this._type }
-    get dateTitle() { return this._dateTitle }
-    get contentType() { return this._contentType }
-    get value() { return this._value }
-    get status() { return this._status }
-    get desc() { return this._desc }
-    get print() { return this._print }
+    get type() {
+        return this._type
+    }
+    get dateTitle() {
+        return this._dateTitle
+    }
+    get contentType() {
+        return this._contentType
+    }
+    get value() {
+        return this._value
+    }
+    get status() {
+        return this._status
+    }
+    get desc() {
+        return this._desc
+    }
+    get print() {
+        return this._print
+    }
 
-    set type(value) { this._type = value }
-    set dateTitle(value) { this._dateTitle = value }
-    set contentType(value) { this._contentType = value }
-    set value(value) { this._setValue(value) }
-    set status(value) { this._status = value }
-    set desc(value) { this._desc = value }
-    set print(value) { this._print = value }
+    set type(value) {
+        this._type = value
+    }
+    set dateTitle(value) {
+        this._dateTitle = value
+    }
+    set contentType(value) {
+        this._contentType = value
+    }
+    set value(value) {
+        this._setValue(value)
+    }
+    set status(value) {
+        this._status = value
+    }
+    set desc(value) {
+        this._desc = value
+    }
+    set print(value) {
+        this._print = value
+    }
 
     _setValue(value = '') {
         this._value = value
@@ -107,6 +136,7 @@ export class ClockIn {
             // }
         }
 
-        if (this._print) console.log(`#打卡数据：${this._value} - 状态: ${this._status} - 描述: ${this._desc}`)
+        if (this._print)
+            console.log(`#打卡数据：${this._value} - 状态: ${this._status} - 描述: ${this._desc}`)
     }
 }

@@ -16,15 +16,28 @@ export class Statistic {
         this._collect = collect || Collect.make()
     }
 
-    static new = (dateTitle = null, clockIn = null, collect = null) => new Statistic(dateTitle, clockIn, collect)
+    static new = (dateTitle = null, clockIn = null, collect = null) =>
+        new Statistic(dateTitle, clockIn, collect)
 
     static make = () => new Statistic()
 
-    get dateTitle() { return this._dateTitle }
-    get clockIn() { return this._clockIn }
-    get collect() { return this._collect }
+    get dateTitle() {
+        return this._dateTitle
+    }
+    get clockIn() {
+        return this._clockIn
+    }
+    get collect() {
+        return this._collect
+    }
 
-    set dateTitle(value) { this._dateTitle = value }
-    set clockIn(value) { this._clockIn = value }
-    set collect(value) { this._collect = value }
+    set dateTitle(value) {
+        this._dateTitle = value
+    }
+    set clockIn(value) {
+        this._clockIn = value
+    }
+    set collect(value) {
+        this._collect = value
+    }
 }

@@ -3,8 +3,8 @@ const routes = [
         path: '/',
         component: () => import('layouts/MainLayout.vue'),
         children: [
-            { path: '', component: () => import('src/pages/ClockingInPage.vue'), },
-            { path: 'timeCalculator', component: () => import('src/pages/TimeCalculatorPage.vue'), },
+            { path: '', component: () => import('src/pages/ClockingInPage.vue') },
+            { path: 'timeCalculator', component: () => import('src/pages/TimeCalculatorPage.vue') },
         ],
     },
 

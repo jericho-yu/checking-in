@@ -16,10 +16,16 @@ export class DateTitleService {
 
     static make = () => new DateTitleService()
 
-    get original() { return this._original }
-    get data() { return this._dateTitles }
+    get original() {
+        return this._original
+    }
+    get data() {
+        return this._dateTitles
+    }
 
-    set original(value) { this._original = value }
+    set original(value) {
+        this._original = value
+    }
 
     /**
      * 处理表头中的日期
@@ -62,5 +68,14 @@ export class DateTitleService {
      * 解析数据
      * @returns {DateTitleService}
      */
-    parse(holiday3Dates = [], exWorkdayDates = [], holidayDates = [], exHolidayDates = [], startDay = null) { this._parseDateTitle(holiday3Dates, exWorkdayDates, holidayDates, exHolidayDates, startDay); return this }
+    parse(
+        holiday3Dates = [],
+        exWorkdayDates = [],
+        holidayDates = [],
+        exHolidayDates = [],
+        startDay = null,
+    ) {
+        this._parseDateTitle(holiday3Dates, exWorkdayDates, holidayDates, exHolidayDates, startDay)
+        return this
+    }
 }

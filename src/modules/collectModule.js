@@ -24,37 +24,89 @@ export class CollectStatistic {
     _earlyClockOut = false // 下班早退
     _reset = false // 休息
 
-    constructor() { }
+    constructor() {}
 
     static new = () => new CollectStatistic()
 
-    get normal() { return this._normal }
-    get overtime() { return this._overtime }
-    get annualLeave() { return this._annualLeave }
-    get paternityLeave() { return this._paternityLeave }
-    get compensatoryLeave() { return this._compensatoryLeave }
-    get personalLeave() { return this._personalLeave }
-    get sickLeave() { return this._sickLeave }
-    get absenteeism() { return this._absenteeism }
-    get missingClockIn() { return this._missingClockIn }
-    get missingClockOut() { return this._missingClockOut }
-    get lateClockIn() { return this._lateClockIn }
-    get earlyClockOut() { return this._earlyClockOut }
-    get reset() { return this._reset }
+    get normal() {
+        return this._normal
+    }
+    get overtime() {
+        return this._overtime
+    }
+    get annualLeave() {
+        return this._annualLeave
+    }
+    get paternityLeave() {
+        return this._paternityLeave
+    }
+    get compensatoryLeave() {
+        return this._compensatoryLeave
+    }
+    get personalLeave() {
+        return this._personalLeave
+    }
+    get sickLeave() {
+        return this._sickLeave
+    }
+    get absenteeism() {
+        return this._absenteeism
+    }
+    get missingClockIn() {
+        return this._missingClockIn
+    }
+    get missingClockOut() {
+        return this._missingClockOut
+    }
+    get lateClockIn() {
+        return this._lateClockIn
+    }
+    get earlyClockOut() {
+        return this._earlyClockOut
+    }
+    get reset() {
+        return this._reset
+    }
 
-    set normal(value) { this._normal = value }
-    set overtime(value) { this._overtime = value }
-    set annualLeave(value) { this._annualLeave = value }
-    set paternityLeave(value) { this._paternityLeave = value }
-    set compensatoryLeave(value) { this._compensatoryLeave = value }
-    set personalLeave(value) { this._personalLeave = value }
-    set sickLeave(value) { this._sickLeave = value }
-    set absenteeism(value) { this._absenteeism = value }
-    set missingClockIn(value) { this._missingClockIn = value }
-    set missingClockOut(value) { this._missingClockOut = value }
-    set lateClockIn(value) { this._lateClockIn = value }
-    set earlyClockOut(value) { this._earlyClockOut = value }
-    set reset(value) { this._reset = value }
+    set normal(value) {
+        this._normal = value
+    }
+    set overtime(value) {
+        this._overtime = value
+    }
+    set annualLeave(value) {
+        this._annualLeave = value
+    }
+    set paternityLeave(value) {
+        this._paternityLeave = value
+    }
+    set compensatoryLeave(value) {
+        this._compensatoryLeave = value
+    }
+    set personalLeave(value) {
+        this._personalLeave = value
+    }
+    set sickLeave(value) {
+        this._sickLeave = value
+    }
+    set absenteeism(value) {
+        this._absenteeism = value
+    }
+    set missingClockIn(value) {
+        this._missingClockIn = value
+    }
+    set missingClockOut(value) {
+        this._missingClockOut = value
+    }
+    set lateClockIn(value) {
+        this._lateClockIn = value
+    }
+    set earlyClockOut(value) {
+        this._earlyClockOut = value
+    }
+    set reset(value) {
+        this._reset = value
+    }
 }
 
 /**
@@ -84,19 +136,43 @@ export class Collect {
 
     static make = () => new Collect()
 
-    get type() { return this._type }
-    get dateTitle() { return this._dateTitle }
-    get contentType() { return this._contentType }
-    get value() { return this._value }
-    get status() { return this._status }
-    get statistic() { return this._collectStatistic }
+    get type() {
+        return this._type
+    }
+    get dateTitle() {
+        return this._dateTitle
+    }
+    get contentType() {
+        return this._contentType
+    }
+    get value() {
+        return this._value
+    }
+    get status() {
+        return this._status
+    }
+    get statistic() {
+        return this._collectStatistic
+    }
 
-    set type(value) { this._type = value }
-    set dateTitle(value) { this._dateTitle = value }
-    set contentType(value) { this._contentType = value }
-    set value(value) { this._setValue(value) }
-    set status(value) { this._status = value }
-    set statistic(value) { this._collectStatistic = value }
+    set type(value) {
+        this._type = value
+    }
+    set dateTitle(value) {
+        this._dateTitle = value
+    }
+    set contentType(value) {
+        this._contentType = value
+    }
+    set value(value) {
+        this._setValue(value)
+    }
+    set status(value) {
+        this._status = value
+    }
+    set statistic(value) {
+        this._collectStatistic = value
+    }
 
     _setValue(value) {
         this._value = value
@@ -169,7 +245,8 @@ export class Collect {
             //     this._collectStatistic.reset = true
             // }
 
-            if (this._print === true) console.log('#汇总数据：', value, matches, this._collectStatistic)
+            if (this._print === true)
+                console.log('#汇总数据：', value, matches, this._collectStatistic)
         }
     }
 

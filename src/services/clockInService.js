@@ -19,23 +19,41 @@ export class ClockInService {
 
     static make = () => new ClockInService()
 
-    get original() { return this._original }
-    get dateTitles() { return this._dateTitles }
-    get data() { return this._clockInData }
+    get original() {
+        return this._original
+    }
+    get dateTitles() {
+        return this._dateTitles
+    }
+    get data() {
+        return this._clockInData
+    }
 
-    set original(value) { this._original = value }
-    set dateTitles(value) { this._dateTitles = value }
+    set original(value) {
+        this._original = value
+    }
+    set dateTitles(value) {
+        this._dateTitles = value
+    }
 
     parse() {
-        this._original.
-            forEach((row) => {
-                let tmp = []
-                const name = Str.new(row[1]).replace()
-                tmp.push(ClockIn.new(row[0], ClockInType.rowNumber))
-                tmp.push(ClockIn.new(name, ClockInType.name))
-                this._dateTitles.data.forEach((item) => tmp.push(ClockIn.new(row[item.idx], ClockInType.clockIn, this._dateTitles, name === '巩伦昊')))
-                this._clockInData.push(tmp)
-            })
+        this._original.forEach((row) => {
+            let tmp = []
+            const name = Str.new(row[1]).replace()
+            tmp.push(ClockIn.new(row[0], ClockInType.rowNumber))
+            tmp.push(ClockIn.new(name, ClockInType.name))
+            this._dateTitles.data.forEach((item) =>
+                tmp.push(
+                    ClockIn.new(
+                        row[item.idx],
+                        ClockInType.clockIn,
+                        this._dateTitles,
+                        name === '巩伦昊',
+                    ),
+                ),
+            )
+            this._clockInData.push(tmp)
+        })
 
         return this
     }
