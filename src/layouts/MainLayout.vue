@@ -8,7 +8,7 @@
                     <q-avatar>
                         <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
                     </q-avatar>
-                    人事阿呆
+                    人事：🤠💩2V
                 </q-toolbar-title>
 
                 <!-- <q-btn dense flat round icon="menu" @click="rightDrawerOpen = !rightDrawerOpen" /> -->
