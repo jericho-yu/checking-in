@@ -29,7 +29,7 @@ export class StatisticService {
     get collectData() {
         return this._collectData
     }
-    get finalStatistic() {
+    get data() {
         return this._finalStatistic
     }
 

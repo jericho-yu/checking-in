@@ -166,10 +166,8 @@
 
         <div class="row">
             <div class="col">
-                <q-card-section>
-                    <q-uploader url="#" color="purple" label="5. 选择考勤表" flat bordered style="width: 100%"
-                        @added="onUploaded" />
-                </q-card-section>
+                <q-uploader url="#" color="purple" label="5. 选择考勤表" flat bordered style="width: 100%"
+                    @added="onUploaded" />
             </div>
         </div>
     </div>
@@ -189,8 +187,6 @@ import { ClockInService } from 'src/services/clockInService'
 import { CollectService } from 'src/services/collectService'
 import { StatisticService } from 'src/services/statisticService'
 
-import { useFinalStatisticStore } from 'src/stores/finalStatisticStore'
-
 const onUploaded = async function (files) {
     const file = files[0]
     const originalClockIn = []
@@ -198,6 +194,7 @@ const onUploaded = async function (files) {
     let dateTitle = null // 日期表头
     let clockInData = {} // 打卡记录数据
     let collectData = {} // 汇总数据
+    let finalStatistic = {} // 最终汇总统计
 
     const fileReader = new FileReader()
     fileReader.onload = async (event) => {
@@ -258,16 +255,15 @@ const onUploaded = async function (files) {
                 .data.forEach((item) => (collectData[item[1].value] = item))
 
             // 分析数据
-            const finalStatisticStore = useFinalStatisticStore()
-            finalStatisticStore.data = StatisticService.new(
+            finalStatistic = StatisticService.new(
                 dateTitle.data,
                 clockInData,
                 collectData,
-            ).parse().finalStatistic
+            ).parse().data
 
-            console.log('最终统计结果:', finalStatisticStore.data)
+            console.log('最终统计结果:', finalStatistic)
 
-            await generateExcel(finalStatisticStore.data, `${startDay.value}.xlsx`)
+            await generateExcel(finalStatistic, `${startDay.value}.xlsx`)
         } catch (error) {
             console.error('解析Excel失败:', error)
         }

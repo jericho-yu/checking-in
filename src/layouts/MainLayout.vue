@@ -29,6 +29,11 @@
                         <router-link to="/timeCalculator">时间计算器</router-link>
                     </q-item-section>
                 </q-item>
+                <q-item clickable>
+                    <q-item-section>
+                        <router-link to="/rezip">重新压缩</router-link>
+                    </q-item-section>
+                </q-item>
                 <q-separator />
             </q-list>
             <!-- drawer content -->
